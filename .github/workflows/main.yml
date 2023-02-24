@@ -25,7 +25,7 @@ jobs:
           echo $SONARQUBE_URL
           echo $SONARQUBE_TOKEN
           echo $SONAR_PROJECT_KEY
-          curl --include --request POST -u ${{ env.SONARQUBE_TOKEN }}: 'http://54.73.70.164:9000/api/projects/create?name=sonartest5&project=sonartest5'
+          curl --include --request POST -u ${{ env.SONARQUBE_TOKEN }}: '${{ env.SONARQUBE_URL }}/api/projects/create?name=${{ env.SONAR_PROJECT_KEY }}&project=${{ env.SONAR_PROJECT_KEY }}'
       
       - name: Create SonarQube properties file
         run: echo "sonar.projectKey=testsonar" > sonar-project.properties
