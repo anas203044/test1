@@ -13,4 +13,4 @@ jobs:
       
       - name: Echo secret value
         run: |
-          echo "The value of API_KEY is ${API_KEY: -4}****"
+          echo "The value of API_KEY is $API_KEY"
