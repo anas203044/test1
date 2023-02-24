@@ -12,5 +12,4 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Echo secret value
-        run: |
-          echo "The value of API_KEY is $API_KEY"
+        run: echo "$API_KEY"
