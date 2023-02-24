@@ -14,9 +14,10 @@ jobs:
       - name: Create SonarQube project
         env:
           SONARQUBE_URL: http://54.73.70.164:9000
-          SONARQUBE_TOKEN: sqa_f658ef5fbb92484d00c5b2331c21cfe09830404e
+          SONARQUBE_TOKEN: squ_92ce500b4383353ef21219293c07ffff35128a09
+          SONAR_PROJECT_KEY: sonartest5
         run: |
-          curl -s -X POST -H "Authorization: Bearer $SONARQUBE_TOKEN" -H "Content-Type: application/json" -d '{"name":"test", "project":"testsonar3"}' "$SONARQUBE_URL/api/projects/create"
+          curl --include --request POST -u $SONARQUBE_TOKEN: '$SONARQUBE_URL/api/projects/create?name=$SONAR_PROJECT_KEY&project=$SONAR_PROJECT_KEY'
       
       - name: Create SonarQube properties file
         run: echo "sonar.projectKey=testsonar" > sonar-project.properties
