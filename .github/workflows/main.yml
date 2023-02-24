@@ -1,8 +1,8 @@
-name: My Workflow
-
+name: Build
 on:
   push:
-    branches: [main]
+    branches:
+      - master # or the name of your main branch
 
 jobs:
   build:
