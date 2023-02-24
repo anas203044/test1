@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Create SonarQube properties file
+        run: echo "sonar.projectKey=testsonar" > sonar-project.properties
+
       
       - name: Echo secret value
         env:
