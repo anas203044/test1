@@ -17,7 +17,7 @@ jobs:
       sonar.projectKey: testsonar
     steps:
       - name: Print Repository Name
-        run: echo "Repository Name:$(basename $GITHUB_REPOSITORY)""
+        run: echo $(basename ${{ github.repository }})
       - name: Create SonarQube project
         run: |
           curl --include --request POST -u ${{ env.SONAR_TOKEN }}: '${{ env.SONAR_HOST_URL }}/api/projects/create?name=${{ env.SONAR_PROJECT_KEY }}&project=${{ env.SONAR_PROJECT_KEY }}'
