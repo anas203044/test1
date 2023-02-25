@@ -16,6 +16,11 @@ jobs:
     env:
       sonar.projectKey: testsonar
     steps:
+      - name: Set Repository Name Variable
+        run: echo "REPO_NAME=$(basename ${{ github.repository }})" >> $GITHUB_ENV
+      
+      - name: Use Repository Name Variable
+        run: echo "Repository Name:${{ env.REPO_NAME }}"
       - name: Print Repository Name
         run: echo $(basename ${{ github.repository }})
       - name: Create SonarQube project
