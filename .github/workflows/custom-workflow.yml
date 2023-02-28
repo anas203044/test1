@@ -12,6 +12,12 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout private repository
+        uses: actions/checkout@v2
+        with:
+          repository: anas203044/private-test
+          ref: main
+          token: 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
       - uses: anas203044/private-test@main
         with:
           ref: main
