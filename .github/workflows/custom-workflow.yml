@@ -12,7 +12,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: anas203044/global/globalaction@main
+      - uses: anas203044/private-test@main
         with:
           sonar-token: \${{ env.SONAR_TOKEN }}
           sonar-host-url: \${{ env.SONAR_HOST_URL }}
