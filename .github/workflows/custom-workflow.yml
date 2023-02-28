@@ -2,7 +2,7 @@ name: Access Private Repository File
 
 on:
   push:
-    branches: [main]
+    branches: "*"
 
 jobs:
   access_file_job:
