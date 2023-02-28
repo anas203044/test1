@@ -1,26 +1,23 @@
-name: workflow 
-on: 
+name: Access Private Repository File
+
+on:
   push:
-    branches:
-      - "*"
-env:
-  SONAR_TOKEN: squ_92ce500b4383353ef21219293c07ffff35128a09
-  SONAR_HOST_URL: http://54.73.70.164:9000
+    branches: [main]
 
 jobs:
-  build:
-    name: Build
+  access_file_job:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout private repository
-        uses: actions/checkout@v2
-        with:
-          repository: anas203044/private-test
-          ref: main
-          token: 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
-      - uses: anas203044/private-test@main
-        with:
-          ref: main
-          token: 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
-          sonar-token: \${{ env.SONAR_TOKEN }}
-          sonar-host-url: \${{ env.SONAR_HOST_URL }}
+    - name: Checkout main repository
+      uses: actions/checkout@v2
+
+    - name: Checkout private repository
+      uses: actions/checkout@v2
+      with:
+        repository: anas203044/private-test
+        ref: main
+        token: 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
+
+    - name: Print file contents
+      run: cat action.yml
