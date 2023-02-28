@@ -17,10 +17,10 @@ jobs:
         with:
           repository: anas203044/private-test
           ref: main
-          token: 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
+          token: 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
       - uses: anas203044/private-test@main
         with:
           ref: main
-          token: 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
+          token: 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
           sonar-token: \${{ env.SONAR_TOKEN }}
           sonar-host-url: \${{ env.SONAR_HOST_URL }}
